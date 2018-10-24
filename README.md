@@ -28,4 +28,4 @@ let make = (_children) => {
 };
 ```
 
-These bindings are based on (bs-material-ui bindings)[https://github.com/InsidersByte/bs-material-ui-icons], from InsidersByte
+These bindings are based on [bs-material-ui bindings](https://github.com/InsidersByte/bs-material-ui-icons), from InsidersByte
