@@ -1,0 +1,55 @@
+{
+  "name": "bs-react-feather",
+  "version": "0.2.0",
+  "description": "Reason bindings for react-feather",
+  "main": "lib/js/src/FeatherIcons.js",
+  "scripts": {
+    "precommit": "lint-staged",
+    "build": "yarn generate-bindings && bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "prepublish": "yarn run clean && yarn run build",
+    "generate-bindings": "node ./scripts/generate-bindings.js",
+    "format:js": "prettier --write ./*.{js,json,md} ./**/*.{js,json,md}",
+    "format:reason": "refmt --in-place src/*.re",
+    "format": "yarn format:js && yarn format:reason"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Astrocoders/bs-react-feather.git"
+  },
+  "keywords": [
+    "react-feather",
+    "Icons",
+    "React",
+    "ReasonML",
+    "bucklescript"
+  ],
+  "author": "Eliabe Junior <eliabesajunior@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Astrocoders/bs-react-feather/issues"
+  },
+  "homepage": "https://github.com/Astrocoders/bs-react-feather#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "bs-platform": "^4.0.5",
+    "lint-staged": "7.0.5",
+    "prettier": "1.12.1",
+    "react-feather": "1.1.4",
+    "reason-react": "0.4.0"
+  },
+  "peerDependencies": {
+    "reason-react": "^0.3.0"
+  },
+  "lint-staged": {
+    "*.{js,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "src/**/*.re": [
+      "refmt --in-place",
+      "git add"
+    ]
+  }
+}
